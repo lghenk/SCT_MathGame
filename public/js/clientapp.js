@@ -36,8 +36,10 @@ function submitAnswer() {
     
     if(answerField.val() == answer) {
         score++;
+        answerField.addClass("is-valid");
     } else {
         score--;
+        answerField.addClass('is-invalid');
     }
 
     switch(questionsAnswered) {
@@ -61,13 +63,17 @@ function submitAnswer() {
         answerField.prop("disabled", false);
         answerField.val("");
         answerField.focus();
+        answerField.removeClass('is-invalid');
+        answerField.removeClass('is-valid');
         if(questionsAnswered < 40) {
             generateQuestion();
         } else {
             // TODO: Finish test and submit to leader board
             clearInterval(timeInterval);
-            alert("Finished");
             socket.emit("finished", {score: score, time: time});
+            alert("Finished - Your score has been send to our leaderboard.. If you wanted so or not!");
+            window.location.replace("/leaderboard");
+            
         }       
     }, 1000);
 }
