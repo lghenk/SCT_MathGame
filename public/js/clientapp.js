@@ -67,6 +67,7 @@ function submitAnswer() {
             // TODO: Finish test and submit to leader board
             clearInterval(timeInterval);
             alert("Finished");
+            socket.emit("finished", {score: score, time: time});
         }       
     }, 1000);
 }
