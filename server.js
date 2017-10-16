@@ -24,11 +24,13 @@ io.on('connection', (socket) => {
   socket.on('setName', (data) => {
     console.log("Our new friend has given their name: " + data.name);
     getMySocket(socket).name = data.name;
-  })
+  });
+
+  
 
   socket.on('disconnect', (socket) => {
     console.log("Our friend has left.. How sad");
-  })
+  });
 });
 
 server.listen(port, () => {

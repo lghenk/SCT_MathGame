@@ -9,6 +9,45 @@
   <body>
 
     <div class="container">
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="card square">
+              <div class="card-body">
+                <h4 class="card-title">Question</h4>
+                <p class="card-text" id="questionField">What is the velocity of an airborn swallow?</p>
+              </div>
+            </div>
+            <br>
+            <div class="card square">
+              <div class="card-body">
+                <p class="card-text">
+                  <div class="form-group">
+                    <label for="answerField">What is your answer</label>
+                    <input type="number" class="form-control square" id="answerField" aria-describedby="answerhelp" placeholder="Enter answer">
+                    <small id="answerhelp" class="form-text text-muted">If you get it wrong we might laugh at you.</small>
+                  </div>
+                </p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card square">
+              <div class="card-body">
+                <h4 class="card-title">Score</h4>
+                <p class="card-text" id="scoreField">69</p>
+              </div>
+            </div>
+            <br>
+            <div class="card square">
+              <div class="card-body">
+                <h4 class="card-title">Time</h4>
+                <p class="card-text" id="timeField">69</p>
+              </div>
+            </div>
+        </div>
+      </div>
+
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content square">
@@ -31,9 +70,7 @@
             </div>
           </div>
         </div>
-      </div>
-
-      
+      </div>    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
