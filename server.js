@@ -26,7 +26,9 @@ app.get('/leaderboard', (req, res) => {
     }  
 
     res.render(viewPath + 'leaderboard', {
-      leaderboard: data
+      leaderboard: data.sort(function(a, b) {
+        return b.data.score - a.data.score;
+      })
     });
     res.end();
   });
@@ -55,10 +57,11 @@ server.listen(port, () => {
   console.log("Magic is happening at http://localhost:" + port);
 });
 
+function sortScore(a, b) {
+  return console.log(a);
+}
+
 function saveScore(socket, testData) {
-
-  //if(fs.existsSync(''))
-
   fs.readFile('score.json', (err, data) => {
     if (err) {
       if (err.code === 'ENOENT') {
